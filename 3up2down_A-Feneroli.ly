@@ -1,7 +1,9 @@
-\version "2.26"
+
+\version "2.26.0"
+\language "english"
 
 \header {
-  title = "↑3 ↓2 D"
+  title = "?3 ?2 D"
   composer = "Fedele Fenaroli (1730–1818)"
   poet = \markup {
     "RULES | Model - Exemplar/"
@@ -11,13 +13,26 @@
 }
 
 \paper {
-  #(set-paper-size "a4landscape")
+  #(set-paper-size "letter" 'landscape)
+
+  left-margin = 15\mm
+  right-margin = 15\mm
+  top-margin = 12\mm
+  bottom-margin = 12\mm
+
   indent = 0\mm
+  short-indent = 0\mm
+
+  ragged-right = ##f
   ragged-last = ##f
   print-page-number = ##f
+
+  % Keep this six-measure example on one system.
+  system-count = 1
 }
 
 % Absolute pitch entry throughout.
+% English pitch names: fs = F-sharp.
 
 soprano = {
   \voiceOne
@@ -35,7 +50,7 @@ soprano = {
   e''2. g''4 |
 
   % Measure 5
-  fis''4 g''2 fis''4 |
+  fs''4 g''2 fs''4 |
 
   % Measure 6
   g''1 \bar "|."
@@ -48,7 +63,7 @@ alto = {
   g'1~ |
 
   % Measure 2
-  g'4 fis'4 a'2~ |
+  g'4 fs'4 a'2~ |
 
   % Measure 3
   a'4 g'4 b'2~ |
@@ -118,3 +133,4 @@ bass = {
     \tempo 4 = 72
   }
 }
+
